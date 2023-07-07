@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Authentication Proxy
+  description: |-
+    Authentication proxy rest api documentation
+  version: 1.0.0
+servers:
+  - url: http://localhots:8001
+tags:
+  - name: Authentication
+paths:
+  /get-token:
+    get:
+      tags:
+        - get-token
+      summary: Get authentiation token
+      description: Get authentiation token
+      operationId: getToken
+      responses:
+        '200':
+          description: Authentication token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+components:
+  schemas:
+    Token:
+      type: object
+      properties:
+        auth-vivelibre-token:
+          type: string
+          example: "83758a1a-33e1-4eec-8adc-ac1b0e760960"
+        date:
+          type: string
+          example: "February 21, 2018"
