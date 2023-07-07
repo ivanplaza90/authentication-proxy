@@ -13,6 +13,8 @@ Execute the `main` method in the `com.ivan.authentication.proxy.AuthenticationPr
 
 
 ## Change Log
+## Version 0.1.0
+* Get authentication token
 
 ## Version 0.0.0
 * Empty spring boot service
