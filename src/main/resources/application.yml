@@ -6,3 +6,8 @@ spring:
     active: dev
   main:
     banner-mode: off
+
+vivelibre:
+  url: "http://localhost:8080"
+  user: "auth-vivelibre"
+  pass: "password"
