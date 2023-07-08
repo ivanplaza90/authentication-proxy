@@ -12,4 +12,8 @@ public class ViveLibreMapper {
             "password", pass
         );
     }
+
+    public String toAccessToken(final Map<String, Object> jsonResponse) {
+        return (String) jsonResponse.get("token");
+    }
 }

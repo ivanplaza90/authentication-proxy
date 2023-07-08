@@ -15,5 +15,5 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public interface ViveLibreApi {
 
     @PostMapping(value = "/token", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
-    String getToken(@RequestBody Map<String,Object> request);
+    Map<String, Object> getToken(@RequestBody Map<String,Object> request);
 }

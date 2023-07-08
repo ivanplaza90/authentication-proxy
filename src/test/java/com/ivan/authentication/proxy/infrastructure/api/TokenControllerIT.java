@@ -11,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Map;
+
 import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -33,7 +35,7 @@ class TokenControllerIT {
 
     @Test
     void it_should_return_token_ok_response() throws Exception {
-        when(viveLibreApi.getToken(anyMap())).thenReturn(TOKEN);
+        when(viveLibreApi.getToken(anyMap())).thenReturn(Map.of("token", TOKEN));
 
         mockMvc.perform(get("/get-token")
             .contentType(MediaType.APPLICATION_JSON)
@@ -43,4 +45,5 @@ class TokenControllerIT {
             .andExpect(jsonPath("$.auth-vivelibre-token").value(TOKEN))
             .andExpect(jsonPath("$.date").exists());
     }
+
 }

@@ -3,6 +3,8 @@ package com.ivan.authentication.proxy.infrastructure.vivelibre;
 import com.ivan.authentication.proxy.domain.TokenRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
 public class TokenRepositoryImpl implements TokenRepository {
 
@@ -24,11 +26,12 @@ public class TokenRepositoryImpl implements TokenRepository {
 
     @Override
     public String get() {
-        return viveLibreApi.getToken(
+        final var jsonResponse = viveLibreApi.getToken(
             viveLibreMapper.toGetTokenRequest(
                 viveLibreProperties.getUsername(),
                 viveLibreProperties.getPass()
             )
         );
+        return viveLibreMapper.toAccessToken(jsonResponse);
     }
 }

@@ -30,6 +30,9 @@ class TokenRepositoryImplTest {
     private Map<String, Object> request;
 
     @Mock
+    private Map<String, Object> response;
+
+    @Mock
     private ViveLibreProperties viveLibreProperties;
 
     @InjectMocks
@@ -41,7 +44,8 @@ class TokenRepositoryImplTest {
         when(viveLibreProperties.getUsername()).thenReturn(USERNAME);
         when(viveLibreProperties.getPass()).thenReturn(PASS);
         when(viveLibreMapper.toGetTokenRequest(USERNAME, PASS)).thenReturn(request);
-        when(viveLibreAPI.getToken(request)).thenReturn(TOKEN);
+        when(viveLibreAPI.getToken(request)).thenReturn(response);
+        when(viveLibreMapper.toAccessToken(response)).thenReturn(TOKEN);
 
         final var response = tokenRepositoryImpl.get();
 
