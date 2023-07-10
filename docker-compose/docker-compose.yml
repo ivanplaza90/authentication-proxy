@@ -1,0 +1,22 @@
+---
+version: '3.6'
+services:
+  authentication-proxy:
+    image: ivan/authentication-proxy
+    volumes:
+      - type: bind
+        source: ./application.yml
+        target: /opt/application/application.yml
+    environment:
+      - CONFIG_FILE=/opt/application/application.yml
+    ports:
+      - "8001:8001"
+
+  auth-server:
+    image: skeet15/auth-vivelibre
+    ports:
+      - "8080:8080"
+
+networks:
+  default:
+    driver: bridge

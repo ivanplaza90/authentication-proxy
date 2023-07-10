@@ -13,6 +13,9 @@ Execute the `main` method in the `com.ivan.authentication.proxy.AuthenticationPr
 
 
 ## Change Log
+## Version 0.2.0
+* Dockerize the service
+
 ## Version 0.1.0
 * Get authentication token
 
