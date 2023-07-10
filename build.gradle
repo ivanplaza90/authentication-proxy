@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.ivan'
-version = '0.1.0'
+version = '0.2.0'
 
 java {
 	sourceCompatibility = '17'
@@ -32,4 +32,8 @@ dependencyManagement {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+bootJar {
+	archiveFileName = 'authentication-proxy.jar'
 }

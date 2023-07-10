@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: off
+
+vivelibre:
+  url: "http://auth-server:8080"
+  user: "auth-vivelibre"
+  pass: "password"
