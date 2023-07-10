@@ -2,7 +2,7 @@
 version: '3.6'
 services:
   authentication-proxy:
-    image: ivan/authentication-proxy
+    image: ivan90/authentication-proxy
     volumes:
       - type: bind
         source: ./application.yml
